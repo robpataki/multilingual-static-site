@@ -7,7 +7,7 @@
 			{% assign button_class = "" %}
 		{% endif %}
 		<li class="menubutton {{button_class}}">
-			{% assign site_url = page.url | replace: page.lang, "en" %}
+			{% assign site_url = page.url | replace: "/hu", "../en" %}
 			<a href="{{site_url}}">EN</a>
 		</li>
 
@@ -17,7 +17,7 @@
 			{% assign button_class = "" %}
 		{% endif %}
 		<li class="menubutton {{button_class}}">
-			{% assign site_url = page.url | replace: page.lang, "hu" %}
+			{% assign site_url = page.url | replace: "/en", "../hu" %}
 			<a href="{{site_url}}" target="_self">HU</a>
 		</li>
 	</ul>
