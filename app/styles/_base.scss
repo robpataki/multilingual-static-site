@@ -1,0 +1,10 @@
+body, html {
+	width: 100%;
+	@extend .font-body;
+	background-color: $colour-site-background;
+}
+
+* {
+	position: relative;
+	box-sizing: border-box;
+}

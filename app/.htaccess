@@ -1,0 +1,5 @@
+# Redirect all root traffic to the English version of the site
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteRule ^$ /multilang/en [L]
+</IfModule>
