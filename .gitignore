@@ -4,6 +4,7 @@ ruby_gems
 npm-debug.log
 .tmp
 .sass-cache
+.jekyll
 dist
 .DS_Store
 secret.json

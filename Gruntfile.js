@@ -50,12 +50,19 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}{,*/}{,*/}*.{scss,sass}'],
         tasks: ['compass:server']
       },
+      jekyll: {
+        files: [
+          '<%= config.app %>/**/*.{html,yml,md,mkd,markdown}',
+          '!<%= config.app %>/bower_components/**/*'
+        ],
+        tasks: ['jekyll:server']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/{,*/}*.html',
+          '.jekyll/**/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
@@ -76,6 +83,7 @@ module.exports = function (grunt) {
           middleware: function(connect) {
             return [
               connect.static('.tmp'),
+              connect.static('.jekyll'),
               connect().use('/bower_components', connect.static('./bower_components')),
               connect.static(config.app)
             ];
@@ -102,7 +110,10 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp',
+      server: [
+        '.tmp',
+        '.jekyll'
+      ],
       videos: {
         files: [{
           src: [
@@ -144,6 +155,30 @@ module.exports = function (grunt) {
             '<%= config.dist %>/images/{,*/}*.*',
             '<%= config.dist %>/fonts/{,*/}*.*'
           ]
+        }
+      }
+    },
+
+    jekyll: {
+      options: {
+        bundleExec: true,
+        config: '_config.yml,_config.build.yml',
+        src: '<%= config.app %>'
+      },
+      dist: {
+        options: {
+          dest: '<%= config.dist %>',
+        }
+      },
+      server: {
+        options: {
+          config: '_config.yml',
+          dest: '.jekyll'
+        }
+      },
+      check: {
+        options: {
+          doctor: true
         }
       }
     },
@@ -333,7 +368,8 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
         server: [
-            'compass:server'
+            'compass:server',
+            'jekyll:server'
         ],
         dist: [
             'compass:dist',
@@ -411,6 +447,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'wiredep',
     'useminPrepare',
+    'jekyll:dist',
     'concurrent:dist',
     'requirejs:dist',
     'copy:dist',

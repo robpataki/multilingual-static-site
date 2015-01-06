@@ -1,0 +1,48 @@
+ .menu {
+ 	display: inline-block;
+ 	height: 60px;
+ 	line-height: 60px;
+ 	vertical-align: middle;
+ 	color: #fff;
+ 	@include clearfix;
+ }
+
+ .menubuttons {
+	margin: 0;
+	padding: 0 0 0 30px;
+	list-style: none;
+}
+
+.menubutton {
+	float: left;
+	display: inline-block;
+	padding: 0 12px;
+
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+}
+
+.menu-lang {
+	display: inline-block;
+	float: right;
+	@include clearfix;
+	padding: 0 30px;
+
+	.menubuttons {
+		padding: 0;
+	}
+
+	.menubutton {
+		margin: 0;
+		padding: 0;
+
+		&:not(:last-child) {
+			&:after {
+				content: "/";
+				margin: 0 4px;
+				position: relative;
+			}
+		}
+	}
+}

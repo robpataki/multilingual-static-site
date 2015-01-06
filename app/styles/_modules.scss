@@ -2,6 +2,10 @@
 	@include outer-container;
 }
 
+.header {
+	background: rgba(0, 0, 0, 0.9);
+}
+
 .banner {
 	@include span-columns(6);
 	@include shift(3);
