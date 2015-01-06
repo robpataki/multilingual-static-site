@@ -1,25 +1,57 @@
+ $menu-height: 90px;
+ 
  .menu {
  	display: inline-block;
- 	height: 60px;
- 	line-height: 60px;
+ 	height: $menu-height;
+ 	line-height: $menu-height;
  	vertical-align: middle;
  	color: #fff;
- 	@include clearfix;
+ 	@include user-select(none);
  }
 
  .menubuttons {
 	margin: 0;
-	padding: 0 0 0 30px;
+	padding: 0;
 	list-style: none;
+	@include clearfix;
 }
 
 .menubutton {
 	float: left;
 	display: inline-block;
-	padding: 0 12px;
+	padding: 0;
 
 	&:not(:last-child) {
-		margin-right: 12px;
+		margin-right: 18px;
+	}
+
+	a {
+		color: #fff;
+		border: 1px solid #fff;
+		padding: 10px;
+		text-decoration: none;
+		@include transition-property(color, border-color, background-color);
+		@include transition-duration(0.21s);
+
+		&:hover {
+			background-color: #0099ff;
+			border-color: transparent;
+		}
+	}
+
+	&.is-active {
+		a {
+			background-color: #0099ff;
+			border-color: transparent;
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+
+	&.is-disabled {
+		opacity: 0.6;
+		pointer-events: none;
+		cursor: default;
 	}
 }
 
@@ -27,7 +59,6 @@
 	display: inline-block;
 	float: right;
 	@include clearfix;
-	padding: 0 30px;
 
 	.menubuttons {
 		padding: 0;
@@ -38,11 +69,7 @@
 		padding: 0;
 
 		&:not(:last-child) {
-			&:after {
-				content: "/";
-				margin: 0 4px;
-				position: relative;
-			}
+			margin-right: 6px;
 		}
 	}
 }

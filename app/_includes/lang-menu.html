@@ -1,10 +1,24 @@
 <nav class="menu menu-lang">
 	<ul class="menubuttons">
-		<li class="menubutton">
-			EN
+		
+		{% if page.lang == "en" %}
+			{% assign button_class = "is-disabled" %}
+		{% else %}
+			{% assign button_class = "" %}
+		{% endif %}
+		<li class="menubutton {{button_class}}">
+			{% assign site_url = page.url | replace: page.lang, "en" %}
+			<a href="{{site_url}}">EN</a>
 		</li>
-		<li class="menubutton">
-			DK
+
+		{% if page.lang == "hu" %}
+			{% assign button_class = "is-disabled" %}
+		{% else %}
+			{% assign button_class = "" %}
+		{% endif %}
+		<li class="menubutton {{button_class}}">
+			{% assign site_url = page.url | replace: page.lang, "hu" %}
+			<a href="{{site_url}}" target="_self">HU</a>
 		</li>
 	</ul>
 </nav>

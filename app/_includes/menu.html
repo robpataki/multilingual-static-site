@@ -1,7 +1,61 @@
 <nav class="menu">
 	<ul class="menubuttons">
-		<li class="menubutton">Home</li>
-		<li class="menubutton">About</li>
-		<li class="menubutton">Contact</li>
+		{% if page.lang == "en" %}
+
+			{% if page.url == "/en/index.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="index.html">Home</a>
+			</li>
+
+			{% if page.url == "/en/about.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="about.html">About</a>
+			</li>
+
+			{% if page.url == "/en/contact.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="contact.html">Contact</a>
+			</li>
+		{% elsif page.lang == "hu" %}
+			
+			{% if page.url == "/hu/index.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="index.html">Nyitólap</a>
+			</li>
+
+			{% if page.url == "/hu/about.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="about.html">Rólunk</a>
+			</li>
+
+			{% if page.url == "/hu/contact.html" %}
+			{% assign link_class = "menubutton is-active" %}
+			{% else %}
+			{% assign link_class = "menubutton" %}
+			{% endif %}
+			<li class="{{link_class}}">
+				<a href="contact.html">Kapcsolat</a>
+			</li>
+		{% endif %}
 	</ul>
 </nav>
