@@ -349,7 +349,11 @@ module.exports = function (grunt) {
             'fonts/{,*/}*.*',
             'videos/{,*/}*.*',
             'resources/{,*/}*.*',
-            '!images/svg'
+            '!images/svg',
+            '!en/**',
+            '!hu/**',
+            '!_includes/**',
+            '!_layouts/**'
           ]
         }, {
           src: '<%= config.app %>/.htaccess',
