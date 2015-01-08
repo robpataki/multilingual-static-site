@@ -1,7 +1,0 @@
-{
-	"name": "static",
-	"directories": {
-		"app": "app",
-		"dist": "dist"
-	}
-}
