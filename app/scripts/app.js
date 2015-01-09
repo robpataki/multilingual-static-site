@@ -25,6 +25,7 @@ define(
 			// Global app elements
 			_this.els = {};
 			_this.els.$window = $(window);
+			_this.els.$html = $('html');
 			_this.els.$header = $('.header');
 			_this.els.$navGroup = _this.els.$header.find('.navgroup');
 			_this.els.$menuButton = _this.els.$header.find('.navgroup_button');
@@ -58,6 +59,9 @@ define(
 								'visibility': 'visible',
 								'display': 'block'
 							});
+							_this.els.$html.css({
+								'overflow': 'hidden'
+							});
 						}
 					});
 				} else {
@@ -67,6 +71,9 @@ define(
 							_this.els.$overlay.css({
 								'visibility': 'hidden',
 								'display': 'none'
+							});
+							_this.els.$html.css({
+								'overflow': 'auto'
 							});
 						}
 					});
@@ -90,6 +97,9 @@ define(
 					'visibility': 'hidden',
 					'display': 'none',
 					'opacity': 0
+				});
+				_this.els.$html.css({
+					'overflow': 'auto'
 				});
 			};
 
