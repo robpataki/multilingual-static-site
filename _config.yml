@@ -15,8 +15,11 @@ exclude: ['images', 'scripts', 'styles', 'fonts',
 
 include: []
 
+languages: ["en", "hu"]
+
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
 show_drafts: true
 
-pygments: false
+markdown: redcarpet
+pygments: true

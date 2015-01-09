@@ -1,0 +1,18 @@
+menu:
+  home: Nyitólap
+  about: Rólunk
+  contact: Kapcsolat
+menu_lang:
+  hungarian: HU
+  english: EN
+pages:
+  home:
+    title: Nyitólap
+    site_title: Csuda magyar oldal - Nyitólap
+  about:
+    title: Rólunk
+    site_title: Csuda magyar oldal - Rólunk
+  contact:
+    title: Kapcsolat
+    site_title: Csuda magyar oldal - Kapcsolat
+

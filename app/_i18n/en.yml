@@ -1,0 +1,18 @@
+menu:
+  home: Home
+  about: About
+  contact: Contact
+menu_lang:
+  hungarian: HU
+  english: EN
+pages:
+  home:
+    title: Home
+    site_title: Such English Site - Home
+  about:
+    title: About
+    site_title: Such English Site - About
+  contact:
+    title: Contact
+    site_title: Such English Site - Contact
+

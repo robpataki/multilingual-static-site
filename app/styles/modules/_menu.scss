@@ -5,6 +5,7 @@
 	z-index: 2;
 	pointer-events: none;
 	@include user-select(none);
+	background: rgba(0, 0, 0, 0.9);
 }
 
 .menu_overlay {
@@ -21,7 +22,7 @@
 }
 
 .navgroup {
-	background: rgba(0, 0, 0, 0.9);
+	
 }
 
 .navgroup_button {
@@ -121,10 +122,12 @@
 	.header {
 		position: absolute;
 		width: 100%;
+		background: transparent;
 	}
 
 	.navgroup {
 		@include transform(translateY(-213px));
+		background: rgba(0, 0, 0, 0.9);
 	}
 
 	.wrapper-content {
